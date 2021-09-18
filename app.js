@@ -1,19 +1,20 @@
 const express = require('express');
+const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const MongoStore = require ('connect-mongo')(session);
+
 const mongoose = require('mongoose');
 const router = express.Router();
 const app = express();
 const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
-const session = require('express-session');
+
 const passport = require("passport");
 
 //passport config:
 require('./config/passport')(passport)
 //mongoose
 mongoose.connect('mongodb+srv://dbUser:Deakin2021@sit725-2021-t2-week4.9iugr.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
+.then(() => console.log('Connected!'))
 .catch((err)=> console.log(err));
 
 //EJS
