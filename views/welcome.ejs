@@ -1,7 +1,28 @@
 <html>
 <h1>Welcome!</h1>
-<p>Create an account or login</p>
+<form action="/users/login" method="POST">
+  <div>
+  <label for="email">Email Address</label>
+  <input
+  type="email"
+  name="email"
+  placeholder="Enter Email Address"
+  />
+  </div>
+  <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter Password"
+      />
+    
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Login</button>
+     
+  </form>
+<p>Create an account</p>
 <a href="/users/register" class="btn btn-primary btn-block mb-2"
-  >Register</a>
-<a href="/users/login"> Login</a>
+  >Sign Up</a>
+<!-- <a href="/users/login"> Login</a> -->
 </html>

@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const MongoStore = require ('connect-mongo')(session);
 const mongoose = require('mongoose');
 const router = express.Router();
 const app = express();
@@ -19,6 +21,10 @@ app.set('view engine','ejs');
 app.use(expressEjsLayout);
 //BodyParser
 app.use(express.urlencoded({extended : false}));
+//cookieParser
+app.use(cookieParser());
+
+
 //express session
 app.use(session({
     secret : 'secret',
