@@ -1,17 +1,23 @@
 <h1>Register</h1>
 <%- include ('./partials/messages') %>
+<div class="divider"></div>
 <form action="/users/register" method="POST">
-<div>
-    <label for="name">Name</label>
+  <div class="row">
+<div class="input-field col s6">
+    <label class="active" for="name">First Name</label>
     <input
-      type="name"
+      type="text"
       name="name"
       placeholder="Enter Name"
       value="<%= typeof name != 'undefined' ? name : '' %>"
     />
-  
-</div>
-<div>
+  </div>
+    <div class="input-field col s6">
+      <input id="last_name" type="text" class="validate">
+      <label for="last_name">Last Name</label>
+    </div>
+  </div>
+<div class="input-field col s12">
     <label for="email">Email Address</label>
     <input
       type="email"
@@ -20,7 +26,7 @@
       value="<%= typeof email != 'undefined' ? email : '' %>"
     />
   </div>
-  <div >
+  <div class="input-field col s12">
     <label for="password">Password</label>
     <input
       type="password"
@@ -29,7 +35,7 @@
       value="<%= typeof password != 'undefined' ? password : '' %>"
     />
   </div>
-  <div >
+  <div class="input-field col s12">
     <label for="password2">Confirm Password</label>
     <input
       type="password"

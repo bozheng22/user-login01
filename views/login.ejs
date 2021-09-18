@@ -1,15 +1,16 @@
 <h1> Login </h1>
 <%- include ('./partials/messages') %>
+<div class="divider"></div>
 <form action="/users/login" method="POST">
-<div>
-<label for="email">Email</label>
+<div "input-field col s12">
+<label for="email">Email Address</label>
 <input
 type="email"
 name="email"
-placeholder="Enter Email"
+placeholder="Enter Email Address"
 />
 </div>
-<div>
+<div "input-field col s12">
     <label for="password">Password</label>
     <input
       type="password"
@@ -18,9 +19,9 @@ placeholder="Enter Email"
     />
   
 </div>
-<button type="submit" class="btn btn-primary btn-block">Login</button>
+<button type="submit" class="waves-effect waves-light btn-large">Login</button>
    
 </form>
-<p>Create an account</p>
-<a href="/users/register" class="btn btn-primary btn-block mb-2"
+<div class="row"></div>
+<a href="/users/register"
   >Sign Up</a>
