@@ -1,8 +1,8 @@
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const mongoose = require('./config/db');
-// const router = express.Router();
+const mongoose = require('mongoose');
+const router = express.Router();
 const app = express();
 const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
@@ -12,9 +12,9 @@ const passport = require("passport");
 //passport config:
 require('./config/passport')(passport)
 //mongoose
-// mongoose.connect('mongodb+srv://dbUser:Deakin2021@sit725-2021-t2-week4.9iugr.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
-// .then(() => console.log('Database Connected!'))
-// .catch((err)=> console.log(err));
+mongoose.connect('mongodb+srv://dbUser:Deakin2021@sit725-2021-t2-week4.9iugr.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => console.log('Database Connected!'))
+.catch((err)=> console.log(err));
 
 
 //EJS
@@ -28,7 +28,7 @@ app.use(cookieParser());
 
 //express session
 app.use(session({
-    secret : 'noonehelpme123',
+    secret : 'noonehelpme',
     resave : true,
     saveUninitialized : true
 }));

@@ -10,12 +10,8 @@ router.get('/register', (req,res)=>{
     res.render('register');
 })
 router.get('/dashboard',ensureAuthenticated,(req,res)=>{
-    if(!req.user){
-        res.redirect('/users/login');
-    } else {
-        res.render('dashboard', {user: req.user});
-    }
-        
+    res.render('dashboard',{
+        user: req.user
+    });
 })
-
 module.exports = router; 

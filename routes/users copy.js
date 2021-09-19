@@ -28,12 +28,12 @@ passport.authenticate('local',{
     }
     //check if match
     if(password !== password2) {
-        errors.push({msg : "Passwords dont match"});
+        errors.push({msg : "passwords dont match"});
     }
     
     //check if password is more than 6 characters
     if(password.length < 6 ) {
-        errors.push({msg : 'Password atleast 6 characters'})
+        errors.push({msg : 'password atleast 6 characters'})
     }
     if(errors.length > 0 ) {
     res.render('register', {
